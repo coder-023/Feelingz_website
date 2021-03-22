@@ -1,11 +1,11 @@
 import React from "react";
 import "../css/NavigationBar.css";
 
-const Button = ({value}) =>{
+const Button = (props) =>{
     return(
     <div id="button">
 
-            <button>{value}</button>
+            <button className={props.className}>{props.value}</button>
             </div>
 
     )}

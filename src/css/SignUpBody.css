@@ -1,0 +1,25 @@
+.signupbody {
+    text-align: center;
+    height:500px;
+    border: 3px solid black;
+    padding: 20px;
+    
+}
+/* .inputfield{
+    margin-top: 20px;
+} */
+.button{
+    text-align: center;
+    margin: auto;
+    position:absolute;
+    right:700px;
+    height: 25px;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+.table{
+    margin-left: auto;
+  margin-right: auto;
+  text-align: center; 
+    vertical-align: middle;
+}
