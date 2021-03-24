@@ -6,9 +6,9 @@ import NavigationBar from "./NavigationBar";
 const SignUp = () =>{
 return(
     <Fragment>
-    <NavigationBar/>
+    
      <SignUpBody/>
-    <Footer/>
+    
     </Fragment>
 )
 };

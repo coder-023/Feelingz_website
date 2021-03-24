@@ -1,16 +1,16 @@
 import React, { Fragment } from "react";
 import Footer from "./Footer";
-import LoginBody from "./LoginBody";
+import SignInBody from "./SignInBody";
 import NavigationBar from "./NavigationBar";
 
-const Login = () =>{
+const SignIn = () =>{
 return(
     <Fragment>
-    <NavigationBar/>
-     <LoginBody/>
-    <Footer/>
+    
+     <SignInBody/>
+   
     </Fragment>
 )
 };
 
-export default Login;
+export default SignIn;
