@@ -23,6 +23,7 @@ import SignIn from './Components/SignIn';
 import SignUp from './Components/SignUp';
 import FirebaseConfig from './Config/FirebaseConfig';
 import NotFound from './Components/NotFound';
+import HomePage from "./Components/HomePage";
 
 
 //initializing Firebase at root page
@@ -45,6 +46,7 @@ function App() {
      </Switch>
     
     </Router> 
+    
     <Footer/>
      </UserContext.Provider>   
 

@@ -1,14 +1,32 @@
 #footer{
     
-    /* border:2px solid black; */
-    position: absolute;
-    bottom: 1px;
-    width: 100%;
-    height:50px;
-    text-align: center;
+    
+             position: fixed;
+             z-index:-1;
+             left: 0;
+             height:20px;
+             bottom: 0;
+             width: 100%;
+             
+             
+             text-align: center;         
+    
     
 }
 #heart{
     color: red;
     
 }
+/* border:2px solid black;
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+            /* Height of the footer*/ 
+    /*height: 50px;
+    background: grey;
+    text-align: center; */
+            /* position: absolute;
+            bottom: 1px;
+            width: 100%;
+            height:50px;
+             */
