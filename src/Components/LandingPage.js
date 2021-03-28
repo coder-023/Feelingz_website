@@ -6,7 +6,7 @@ const LandingPage = () =>{
 
     return(
         <div className="landpage">
-        Welcome to my website!<br/>
+        <h1>Welcome to my website!</h1>
         What is Feelingz?<GiThink/><br/>
         Feelingz is a website which will help people to express their feelings anonymously.
     </div>

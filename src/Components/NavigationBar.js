@@ -7,15 +7,12 @@ import Footer from "./Footer";
 
 import UserContext from "../Context/UserContext";
 
-const logout = () =>{
-    
-}
 const NavigationBar = () =>{
     const context = useContext(UserContext);
     return(
         <div className="header">
             <div id="title">
-                <GiFlowers/>Feelingz</div>
+                <GiFlowers id="icon"/>Feelingz</div>
                {/*if context.user.email is present display Logout button else SignIn and SignOut */}
             {
             (context.user?.email) ? (

@@ -53,14 +53,7 @@ if(context.user?.uid){
         <p>Sign Up !</p>   
         <table className="table">
 
-        <tr>
-            <td>Name:</td>
-            <td><input type="text" name="firstname" className="inputfield" placeholder="Enter your name"></input></td>
-       </tr>
-       <tr> 
-           <td>Date Of Birth:</td>
-           <td><input type="date" name="dob" className="inputfield" placeholder="Enter your dateof birth"></input></td>
-        </tr>
+       
         <tr>
         <td>Username:</td>
            <td> <input onChange={e => setEmail(e.target.value)} type="text" name="username" className="inputfield" placeholder="Enter your username"></input></td>

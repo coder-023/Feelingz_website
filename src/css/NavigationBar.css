@@ -35,6 +35,9 @@
        width: 63px;
     
 }
+#icon{
+margin-right: 3px;
+}
 /* flex-basis: 50%;
 align-items: baseline;
 justify-content: end;
