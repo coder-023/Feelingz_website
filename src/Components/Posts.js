@@ -4,15 +4,23 @@ import "../css/Posts.css";
 const Posts= ({postsarray}) => {
   const [keyy,setKeyy] = useState([]);
  var flag=false;
+ console.log(typeof(postsarray));
+ 
+
+
+
     return (
         <div className="posts">
             
-            
+ {//TODO: refer to Tania Rascia tutorial to improve local storage          
+  }
+ 
 
  <ul id="myposts">
    {
-    
+   
      postsarray.map((id)=>{
+       console.log("entry");
        var list=document.getElementById("myposts");
        //  alert(child.item)
        //  alert(list)
