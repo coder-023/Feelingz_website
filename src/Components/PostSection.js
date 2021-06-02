@@ -14,7 +14,7 @@ const PostSection = ({addPosts}) =>{
    e.preventDefault();
    if(postString === "") 
     {
-        (alert("Enter string"))
+        (alert("Enter String"))
         return;
     } 
        const post={
