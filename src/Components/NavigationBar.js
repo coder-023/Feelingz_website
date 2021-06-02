@@ -15,21 +15,21 @@ const NavigationBar = () =>{
                 <GiFlowers id="icon"/>Feelingz</div>
                {/*if context.user.email is present display Logout button else SignIn and SignOut */}
             {
-            (context.user?.email) ? (
+            (context.user) ? (
                 <Link to="/">
                     <Button onClick={() => {context.setUser(null)}} value="Sign Out"/>
                 </Link>
-                    
+               
                 ):(                 
                 
-                <>
+                <div>
                 <Link to="/signin">
                 <Button value="SignIn"/>
                 </Link>
                 <Link to="/signup">
                 <Button value="Sign Up"/>
                 </Link>
-                </>
+                </div>
                 ) 
             }
             

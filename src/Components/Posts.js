@@ -51,7 +51,7 @@ const Posts= ({postsarray}) => {
          {
           document.getElementById("myposts").appendChild(x);
          }
-        console.log(child[0].attributes?.key)
+        console.log(child[0].attributes.key)
          for(let i=0;i<child.length;i++)
          {
            console.log(child[i]);

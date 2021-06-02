@@ -25,7 +25,7 @@ const PostSection = ({addPosts}) =>{
    
     }
     return(
-        <>
+        <div>
         <div class="postsection">
             Post Something!
         <div class="textarea">
@@ -36,7 +36,7 @@ const PostSection = ({addPosts}) =>{
 
         </div>
         
-        </>
+        </div>
     )
 }
 export default PostSection;

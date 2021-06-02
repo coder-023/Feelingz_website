@@ -42,7 +42,7 @@ const SignUpBody = () =>{
         e.preventDefault();
         handleSignUp();
     }
-if(context.user?.uid){
+if(context.user){
         return <Redirect to="/"></Redirect>
     }
 
