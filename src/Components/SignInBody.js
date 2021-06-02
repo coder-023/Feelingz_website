@@ -34,7 +34,7 @@ const SignInBody = () =>{
         handleSignUp();
     }
     //We need to show this page based on some conditions
-    alert("SIGNINBODY",context);
+    //alert("SIGNINBODY",context);
     if(context.user!==null){
         return <Redirect to="/"></Redirect>
     }
