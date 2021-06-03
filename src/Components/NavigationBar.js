@@ -17,17 +17,17 @@ const NavigationBar = () =>{
             {
             (context.user) ? (
                 <Link to="/">
-                    <Button onClick={() => {context.setUser(null)}} value="Sign Out"/>
+                    <Button className="signoutbtn" onClick={() => {context.setUser(null)}} value="Sign Out"/>
                 </Link>
                
                 ):(                 
                 
-                <div>
+                <div className="btns">
                 <Link to="/signin">
-                <Button value="SignIn"/>
+                <Button className="signinbtn" value="Sign In"/>
                 </Link>
                 <Link to="/signup">
-                <Button value="Sign Up"/>
+                <Button className="signupbtn" value="Sign Up"/>
                 </Link>
                 </div>
                 ) 

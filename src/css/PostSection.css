@@ -22,13 +22,13 @@
     margin-bottom: 2px;
     margin-top: 8px;
     resize:none;
+    outline: none;
 
 }
 .button1{
-  position:relative;  
-  top:27px;
-  border-radius: 10px;
-  margin-left: 5px;
+  margin-left: 23px;
+  height: 31px;
+  border-radius: 20px;
     /* text-align: center;
     position: absolute;
     bottom:425px; */

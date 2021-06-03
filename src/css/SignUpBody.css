@@ -10,10 +10,17 @@
     margin-top: 20px;
 } */
 .button{
-    text-align: center;
+    /* text-align: center;
     margin: auto;
     position:absolute;
     right:700px;
+    height: 25px;
+    margin-top: 20px;
+    border-radius: 20px; */
+    text-align: center;
+    margin: auto;
+    position:absolute;
+    right:650px;
     height: 25px;
     margin-top: 20px;
     border-radius: 20px;

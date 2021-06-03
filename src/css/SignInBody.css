@@ -6,14 +6,21 @@
     
 }
 .inputfield{
+    outline:none;
     margin-top: 20px;
 }
-.button{
+.signinbutton{
     text-align: center;
     margin: auto;
     position:absolute;
-    right:700px;
+    right:650px;
     height: 25px;
     margin-top: 20px;
     border-radius: 20px;
+}
+.table{
+    margin-left: auto;
+  margin-right: auto;
+  text-align: center; 
+    vertical-align: middle;
 }

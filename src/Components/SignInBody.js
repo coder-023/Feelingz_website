@@ -48,10 +48,18 @@ const SignInBody = () =>{
     
     <div className="SignInbody">
         <p>SignIn yourself</p>
-        Username:<input onChange={e => setEmail(e.target.value)} type="text" name="username" className="inputfield" placeholder="Enter your username"></input><br/>
-        Password:<input onChange={e => setPassword(e.target.value)} type="password" name="password" className="inputfield" placeholder="Enter your password"></input><br/>
-        
-       <Button onClick={handleFormSubmit} className="button" value={"SignIn"}/>
+        <table className="table">
+            <tr>
+                <td>Username:</td>
+                <td><input onChange={e => setEmail(e.target.value)} type="text" name="username" className="inputfield" placeholder="Enter your username"></input><br/></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td> <input onChange={e => setPassword(e.target.value)} type="password" name="password" className="inputfield" placeholder="Enter your password"></input></td>
+            </tr>
+      
+        </table>
+       <Button onClick={handleFormSubmit} className="signinbutton" value={"SignIn"}/>
     </div>)
 }
 

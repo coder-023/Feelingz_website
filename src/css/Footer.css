@@ -1,16 +1,13 @@
 #footer{
     
     
-             position: fixed;
-             z-index:-1;
-             left: 0;
-             height:20px;
-             bottom: 0;
-             width: 100%;
-             
-             
-             text-align: center;         
-    
+    position: fixed;
+    z-index: -1;
+    left: 0;
+    height: 44px;
+    bottom: 7px;
+    width: 100%;
+    text-align: center;
     
 }
 #heart{
