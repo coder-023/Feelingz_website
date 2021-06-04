@@ -40,7 +40,9 @@
 #title{
     font-family: cursive;
     font-size: 40px;
+    color:rgb(0, 0, 0);
     flex-basis: 83%;
+    text-decoration: none;
 }
 
 

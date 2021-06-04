@@ -11,8 +11,10 @@ const NavigationBar = () =>{
     const context = useContext(UserContext);
     return(
         <div className="header">
+            <Link to="/" >
             <div id="title">
                 <GiFlowers id="icon"/>Feelingz</div>
+                </Link>
                {/*if context.user.email is present display Logout button else SignIn and SignOut */}
             {
             (context.user) ? (
