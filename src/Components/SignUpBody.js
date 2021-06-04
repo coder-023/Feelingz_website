@@ -55,11 +55,11 @@ if(context.user){
 
        
         <tr>
-        <td>Username:</td>
+        <td><b>Username:</b></td>
            <td> <input onChange={e => setEmail(e.target.value)} type="text" name="username" className="inputfield" placeholder="Enter your username"></input></td>
             </tr>
-        <tr >
-        <td >Password:</td>
+        <tr>
+        <td><b>Password:</b></td>
         <td><input onChange={e => setPassword(e.target.value)} type="password" name="password" className="inputfield" placeholder="Enter your password"></input></td>
         </tr>
         </table>

@@ -13,11 +13,14 @@ text-align: center;
   }
   
   ul li {
-    border: 1px solid #ddd;
+    border: 1px solid rgb(0, 0, 0);
     margin-top: -1px; /* Prevent double borders */
-    background-color: #f6f6f6;
+    background-color:rgb(130, 255, 255);
     padding: 12px;
-    text-align: justify;
+    text-align: center;
     margin:12px;
     margin-bottom: 24px;
-  }
+    height: 66px;
+    text-decoration: solid;
+  } 
+ 

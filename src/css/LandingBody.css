@@ -1,7 +1,8 @@
 .landpage{
     text-align: center;
-    height:500px;
+    height:550px;
     border: 3px solid black;
+    background-color: rgb(71, 255, 71);
 }
 .thinkicon{
     color: blue;

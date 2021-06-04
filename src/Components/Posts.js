@@ -20,7 +20,7 @@ const Posts= ({postsarray}) => {
 //  margin-bottom: 18px;
     return (
 <ListGroup className="mt-5 mb-2">
-  <p align="center">POSTS</p>
+  <h1 align="center">POSTS</h1>
 {postsarray.map(post =>(
   <ListGroupItem key={post.id}>
     {post.postString}

@@ -1,13 +1,17 @@
 #footer{
     
     
-    position: fixed;
+    position: sticky;
     z-index: -1;
-    left: 0;
-    height: 44px;
-    bottom: 7px;
+    
+    height: 100%;
+    /* bottom: 7px; */
     width: 100%;
     text-align: center;
+    border : 2px solid black;
+    border-top: none;
+    padding:14px;
+    background-color: gainsboro;
     
 }
 #heart{
