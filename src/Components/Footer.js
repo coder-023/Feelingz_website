@@ -4,7 +4,7 @@ import "../css/Footer.css";
 const Footer = () => {
     return(
         <div id="footer">
-            Made with <FaHeart id="heart"/> by Mukul
+            Made with <FaHeart id="heart"/> by <b>Mukul</b>
         </div>
     )
 }

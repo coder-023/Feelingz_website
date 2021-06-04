@@ -9,7 +9,7 @@ const LandingPage = () =>{
         <div className="landpage">
         <h1>Welcome to my website!</h1>
         <IconContext.Provider value={{className:"thinkicon"}}>
-        <GiThink />What is Feelingz?<GiThink />
+        <GiThink /><b>What is website about?</b><GiThink />
         </IconContext.Provider>
         <br/>
         Feelingz is a website which will help people to express their feelings anonymously.

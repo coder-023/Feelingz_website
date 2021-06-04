@@ -27,7 +27,7 @@ const PostSection = ({addPosts}) =>{
     return(
         <div>
         <div class="postsection">
-            Post Something!
+           <h1> What's in your mind!</h1>
         <div class="textarea">
     <textarea name="textarea_post" value={postString} onChange={e => setPostString(e.target.value)} placeholder="Type Something here"></textarea>
     <Button className="button1" onClick={Action} value={"Post Now"}/>
