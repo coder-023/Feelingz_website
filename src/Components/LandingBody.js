@@ -12,7 +12,7 @@ const LandingBody = () =>{
     {
         //console.log("Context",context);
         //alert("LANDINGBODY",context.user);
-        if(context.user)  //making changes here to design the homepage!
+        if(context.user)  
         {
             return(
                 <HomePage/>

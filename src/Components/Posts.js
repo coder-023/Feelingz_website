@@ -1,14 +1,38 @@
-import React,{useState} from 'react';
+import React,{useState,useContext,useReducer,useEffect} from 'react';
 import "../css/Posts.css";
 import { BsTrashFill } from "react-icons/bs";
 import { FiEdit2 } from "react-icons/fi";
 import {ListGroup,ListGroupItem} from "reactstrap"
 //TODO: just fetch the object and display using map property
+import PostContext from '../Context/PostContext';
+import { SET_POST,SET_LOADING } from '../Context/actions.types';
+import firebase from 'firebase/app';
+import { toast } from 'react-toastify';
 
-const Posts= ({postsarray}) => {
-  const [keyy,setKeyy] = useState([]);
- var flag=false;
- console.log(typeof(postsarray));
+
+
+
+const Posts = () => {
+const {state,dispatch}= useContext(PostContext);//MISTAKE :used  useReducer instead of useContext
+const {posts,isLoading} = state;
+
+//   const [keyy,setKeyy] = useState([]);alert("Hello")
+//  var flag=false;alert("Hello")
+ const deleteContact = (key)=>{
+   try {
+     
+   
+   firebase
+   .database()
+   .ref(`/posts/${key}`)
+   .remove()
+   .then(() =>{
+     toast("Deleted Successfully",{type:"success"});
+   })
+  } catch (error) {
+     console.log(error);
+  }
+}
  
 
 
@@ -23,14 +47,22 @@ const Posts= ({postsarray}) => {
     return (
 <ListGroup className="mt-5 mb-2 ">
   <h1 align="center">POSTS</h1>
-{postsarray.map(post =>(
+  {Object.entries(posts).map(([key,value])=>(
+    <ListGroupItem key={key}>
+      {value.postString}
+      <span><FiEdit2 className="ml-2"/>
+    <BsTrashFill onClick={() => deleteContact(key)} className="text-danger icon"/>
+    </span>
+    </ListGroupItem>
+  ))}
+{/* {postsarray.map(post =>(
   <ListGroupItem key={post.id} className="listgrpitem">
     {post.postString}
     <span><FiEdit2 className="ml-2"/>
     <BsTrashFill className="text-danger icon"/>
     </span>
   </ListGroupItem>
-))}
+))} */}
 </ListGroup>
     )
        

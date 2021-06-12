@@ -8,12 +8,14 @@ import {toast} from "react-toastify";
 
 
 const SignInBody = () =>{
+    // alert("SIGNINBODY");
+    // console.log(context);
     const context=useContext(UserContext);
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
 
 
-    const handleSignUp = () =>{
+    const handleSignIn = () =>{
         firebase
         .auth()
         .signInWithEmailAndPassword(email,password)
@@ -31,11 +33,12 @@ const SignInBody = () =>{
 
     const handleFormSubmit = e =>{
         e.preventDefault();
-        handleSignUp();
+        handleSignIn();
     }
     //We need to show this page based on some conditions
     //alert("SIGNINBODY",context);
     if(context.user!==null){
+        
         return <Redirect to="/"></Redirect>
     }
 
