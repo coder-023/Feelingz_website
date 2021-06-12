@@ -8,14 +8,16 @@
 }
 .inputfield{
     outline:none;
-    margin-top: 20px;
+    margin-top: 5px;
+    padding:10px;
+    border-radius: 10px;
 }
 .signinbutton{
     text-align: center;
     margin: auto;
-    position:absolute;
-    right:650px;
-    height: 25px;
+    /* position: absolute; */
+    /* right: 650px; */
+    height: 35px;
     margin-top: 20px;
     border-radius: 20px;
 }

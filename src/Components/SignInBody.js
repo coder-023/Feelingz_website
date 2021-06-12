@@ -47,7 +47,7 @@ const SignInBody = () =>{
     
     
     <div className="SignInbody">
-        <p>Sign In yourself</p>
+        <p><h1>Sign In </h1></p>
         <table className="table">
             <tr>
                 <td><b>Username:</b></td>
@@ -57,9 +57,13 @@ const SignInBody = () =>{
                 <td><b>Password:</b></td>
                 <td> <input onChange={e => setPassword(e.target.value)} type="password" name="password" className="inputfield" placeholder="Enter your password"></input></td>
             </tr>
+      <tr>
+     
+      <td colSpan="2"> <Button onClick={handleFormSubmit} className="signinbutton" value={"Sign In"}/></td>
+      
+      </tr>
       
         </table>
-       <Button onClick={handleFormSubmit} className="signinbutton" value={"Sign In"}/>
     </div>)
 }
 

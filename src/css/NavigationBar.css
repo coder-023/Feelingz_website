@@ -1,6 +1,6 @@
 .header{
     display: flex;
-    
+    background-color: rgb(255, 148, 144);
     align-items: center;
     justify-content:space-between;
     /* flex-flow: wrap;
@@ -36,6 +36,7 @@
     border-radius: 20px;
     width: 95px;
     height:44px;
+    text-decoration: none;
 }
 #title{
     font-family: cursive;

@@ -50,7 +50,7 @@ if(context.user){
 
     return(
     <div className="signupbody">
-        <p>Sign Up !</p>   
+        <h1>Sign Up !</h1>   
         <table className="table">
 
        
@@ -62,8 +62,11 @@ if(context.user){
         <td><b>Password:</b></td>
         <td><input onChange={e => setPassword(e.target.value)} type="password" name="password" className="inputfield" placeholder="Enter your password"></input></td>
         </tr>
+        <tr>
+            <td colSpan="2"><Button onClick={handleFormSubmit} className="button" value={"Sign Up"}/></td>
+        </tr>
         </table>
-       <Button onClick={handleFormSubmit} className="button" value={"Sign Up"}/>
+       
     </div>)
 }
 
