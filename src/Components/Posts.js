@@ -5,19 +5,29 @@ import { FiEdit2 } from "react-icons/fi";
 import {ListGroup,ListGroupItem} from "reactstrap"
 //TODO: just fetch the object and display using map property
 import PostContext from '../Context/PostContext';
-import { SET_POST,SET_LOADING } from '../Context/actions.types';
-import firebase from 'firebase/app';
+import { SET_POST,SET_LOADING, POST_TO_UPDATE } from '../Context/actions.types';
+import firebase from '@firebase/app';
 import { toast } from 'react-toastify';
 
 
-
+import 'firebase/database';
 
 const Posts = () => {
 const {state,dispatch}= useContext(PostContext);//MISTAKE :used  useReducer instead of useContext
 const {posts,isLoading} = state;
-
+const [isUpdate, setIsUpdate] = useState(false);
 //   const [keyy,setKeyy] = useState([]);alert("Hello")
 //  var flag=false;alert("Hello")
+const updateContact=(keyy,value)=>{
+  //when button is clicked, set isupdate=true
+  // console.log(keyy,value);
+  dispatch({
+    type:POST_TO_UPDATE,
+    payload:value,
+    key:keyy
+  });
+  console.log(state);
+}
  const deleteContact = (key)=>{
    try {
      
@@ -50,7 +60,7 @@ const {posts,isLoading} = state;
   {Object.entries(posts).map(([key,value])=>(
     <ListGroupItem key={key}>
       {value.postString}
-      <span><FiEdit2 className="ml-2"/>
+      <span><FiEdit2 onClick={() => updateContact(key,value)}className="ml-2"/>
     <BsTrashFill onClick={() => deleteContact(key)} className="text-danger icon"/>
     </span>
     </ListGroupItem>

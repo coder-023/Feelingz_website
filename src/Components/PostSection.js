@@ -35,7 +35,11 @@ const PostSection = () =>{
     useEffect(()=>{
         if(postToUpdate)
         {
+             //function to bring focuss on top will come here
+             window.scrollTo(0,0);
+            // alert("use effect triggered!");
             setPostString(postToUpdate.postString);
+            console.log(postToUpdate,postToUpdateKey);
             setIsUpdate(true);
         }
     },[postToUpdate]);
@@ -58,17 +62,19 @@ const PostSection = () =>{
   };
   //Update 
   const updatePost = async () => {
-
+// alert("Update triggered000");
+console.log(postToUpdateKey);   
     try {
         firebase
-        .datebase()
-        .ref("posts/"+ postToUpdateKey)
+        .database()
+        .ref(`/posts/${postToUpdateKey}`) 
         .set({
             postString
         });
         console.log(state);
     } catch (err) {
         console.log(err);
+        toast("Error",{type:"danger"});
     }
   };
 //function which will decide whether we have to update or add post

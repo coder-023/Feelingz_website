@@ -12,7 +12,8 @@ export default (state,action) =>{
             
         case SET_LOADING:                 //this case will be useful to show the loading icon
             return { ...state, isLoading: action.payload };    
-        case POST_TO_UPDATE:           //this case will be triggered when we want to update certain post.It will return the state, postString (that is to be updated) and the key of that postString
+        case POST_TO_UPDATE: 
+        console.log(action.payload) ;         //this case will be triggered when we want to update certain post.It will return the state, postString (that is to be updated) and the key of that postString
             return{
                 ...state,
                 postToUpdate:action.payload,
