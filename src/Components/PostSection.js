@@ -32,7 +32,10 @@ const PostSection = () =>{
  
     const {state,dispatch}=useContext(PostContext);
     const {postToUpdate,postToUpdateKey}=state;
+    
     useEffect(()=>{
+        setPostString("");
+        alert("triggered");
         if(postToUpdate)
         {
              //function to bring focuss on top will come here
@@ -80,9 +83,17 @@ console.log(postToUpdateKey);
 //function which will decide whether we have to update or add post
 const handleSubmit = e =>{
     e.preventDefault();
+    if(postString==="")
+    {
+        alert("Enter something!");
+        setIsUpdate(false);
+        return;
+        
+    }
+    else{
     isUpdate ? updatePost() : addPost();
     setPostString('');
-    toast("Success",{type:"success"});
+    toast("Success1",{type:"success"});
     setIsUpdate(false);
 
     dispatch({
@@ -90,6 +101,7 @@ const handleSubmit = e =>{
         payload:null,
         key:null
     });
+}
 }
 
 
@@ -103,7 +115,7 @@ const handleSubmit = e =>{
            <h1> What's in your mind!</h1>
         <div class="textarea">
             
-    <textarea name="textarea_post" value={postString} onChange={e => setPostString(e.target.value)} placeholder="Type Something here"></textarea>
+    <textarea required name="textarea_post" value={postString} onChange={e => setPostString(e.target.value)} placeholder="Type Something here"></textarea>
     <Button className="button1" onClick={handleSubmit} value={"Post Now"}/>
     
 </div>

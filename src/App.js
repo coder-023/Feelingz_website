@@ -45,8 +45,10 @@ const initialState={
 };
 function App() {
   const [state,dispatch] = useReducer(reducer,initialState);
-  const [user,setUser] = useState(null)
+  const [user,setUser] = useState(null);
+  const [postString,setPostString] = useState("");
   const getPosts = async () => {
+    setPostString('');
     dispatch({
       type:SET_LOADING,
       payload:true
