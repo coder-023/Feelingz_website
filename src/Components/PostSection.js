@@ -75,6 +75,7 @@ const PostSection = () =>{
 const handleSubmit = e =>{
     e.preventDefault();
     isUpdate ? updatePost() : addPost();
+    setPostString('');
     toast("Success",{type:"success"});
     setIsUpdate(false);
 
@@ -95,9 +96,10 @@ const handleSubmit = e =>{
         <div class="postsection">
            <h1> What's in your mind!</h1>
         <div class="textarea">
+            
     <textarea name="textarea_post" value={postString} onChange={e => setPostString(e.target.value)} placeholder="Type Something here"></textarea>
     <Button className="button1" onClick={handleSubmit} value={"Post Now"}/>
-
+    
 </div>
 
         </div>
