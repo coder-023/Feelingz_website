@@ -4,6 +4,7 @@ import SignInBody from "./SignInBody";
 import NavigationBar from "./NavigationBar";
 
 const SignIn = () =>{
+    // alert("Hello");
 return(
     <Fragment>
     

@@ -1,5 +1,6 @@
 .posts{
 text-align: center;
+background-color: rgb(86, 197, 66);
 
 }
 * {
@@ -8,19 +9,46 @@ text-align: center;
   
   ul {
     list-style-type: none;
-    padding: 0;
-    margin: 0;
+    /* padding: 20px; */
+    align-items: center;
+    /* border-left:2px solid black ;
+    border-bottom:2px solid black ;
+    border-right:2px solid black ; */
+    /* margin: 29px; */
+    
   }
   
   ul li {
-    border: 1px solid rgb(0, 0, 0);
-    margin-top: -1px; /* Prevent double borders */
-    background-color:rgb(130, 255, 255);
+    
+    /* border: 1px solid rgb(0, 0, 0);
+    margin-top: -1px; Prevent double borders */
+    /* background-color:rgb(130, 255, 255);
     padding: 12px;
     text-align: center;
     margin:12px;
-    margin-bottom: 24px;
-    height: 66px;
+    margin-bottom: 36px;
+    height: 55px;
+    vertical-align: middle;
+    line-height: 25px;
+    text-decoration: solid; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: space-between;
+    border: 1px solid rgb(0, 0, 0);
+    margin-top: -1px;
+    background-color: rgb(130, 255, 255);
+    padding: 12px;
+    text-align: center;
+    margin: 12px;
+    margin-bottom: 36px;
+    /* height: 10vw; */
+    /* width: 59vw; */
+    vertical-align: middle;
+    line-height: 25px;
+    -webkit-text-decoration: solid;
     text-decoration: solid;
-  } 
+}
+  
  

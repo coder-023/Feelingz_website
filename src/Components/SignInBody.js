@@ -8,12 +8,14 @@ import {toast} from "react-toastify";
 
 
 const SignInBody = () =>{
+    // alert("SIGNINBODY");
+    // console.log(context);
     const context=useContext(UserContext);
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
 
 
-    const handleSignUp = () =>{
+    const handleSignIn = () =>{
         firebase
         .auth()
         .signInWithEmailAndPassword(email,password)
@@ -31,11 +33,12 @@ const SignInBody = () =>{
 
     const handleFormSubmit = e =>{
         e.preventDefault();
-        handleSignUp();
+        handleSignIn();
     }
     //We need to show this page based on some conditions
     //alert("SIGNINBODY",context);
     if(context.user!==null){
+        
         return <Redirect to="/"></Redirect>
     }
 
@@ -47,7 +50,7 @@ const SignInBody = () =>{
     
     
     <div className="SignInbody">
-        <p>Sign In yourself</p>
+        <p><h1>Sign In </h1></p>
         <table className="table">
             <tr>
                 <td><b>Username:</b></td>
@@ -57,9 +60,13 @@ const SignInBody = () =>{
                 <td><b>Password:</b></td>
                 <td> <input onChange={e => setPassword(e.target.value)} type="password" name="password" className="inputfield" placeholder="Enter your password"></input></td>
             </tr>
+      <tr>
+     
+      <td colSpan="2"> <Button onClick={handleFormSubmit} className="signinbutton" value={"Sign In"}/></td>
+      
+      </tr>
       
         </table>
-       <Button onClick={handleFormSubmit} className="signinbutton" value={"Sign In"}/>
     </div>)
 }
 
