@@ -56,6 +56,7 @@ const PostSection = () =>{
             
         });
         console.log(state);
+        toast("Added Successfully!",{type:"success"});
     } catch (err) {
         console.log(err);
     }
@@ -72,9 +73,10 @@ console.log(postToUpdateKey);
             postString
         });
         console.log(state);
+        toast("Updated Successfully!",{type:"success"});
     } catch (err) {
         console.log(err);
-        toast("Error",{type:"danger"});
+        toast("Error",{type:"error"});
     }
   };
 //function which will decide whether we have to update or add post
@@ -82,7 +84,7 @@ const handleSubmit = e =>{
     e.preventDefault();
     isUpdate ? updatePost() : addPost();
     setPostString('');
-    toast("Success",{type:"success"});
+    // toast("Success",{type:"success"});
     setIsUpdate(false);
 
     dispatch({

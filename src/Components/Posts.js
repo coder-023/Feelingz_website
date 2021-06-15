@@ -39,6 +39,7 @@ const updateContact=(keyy,value)=>{
    .then(() =>{
      toast("Deleted Successfully",{type:"success"});
    })
+   
   } catch (error) {
      console.log(error);
   }
