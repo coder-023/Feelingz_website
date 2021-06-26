@@ -7,7 +7,7 @@ import LandingPage from "./LandingPage";
 const LandingBody = () =>{
     const context = useContext(UserContext);
     
-
+//TODO: Remove user context
 
     {
         //console.log("Context",context);

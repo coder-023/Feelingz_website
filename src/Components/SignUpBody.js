@@ -20,7 +20,7 @@ const SignUpBody = () =>{
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
 
-
+//TODO: Remove user context
     const handleSignUp = () => {
         firebase
         .auth()

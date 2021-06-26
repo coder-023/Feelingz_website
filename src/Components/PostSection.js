@@ -6,6 +6,7 @@ import Button from "./Button";
 import Posts from "./Posts";
 import firebase from "firebase/app"
 //context stuff
+import UserContext from "../Context/UserContext";
 import PostContext from "../Context/PostContext";
 import {POST_TO_UPDATE} from "../Context/actions.types"
 import { useHistory } from "react-router";
@@ -15,6 +16,7 @@ import { toast } from "react-toastify";
 const PostSection = () =>{
     const [postString,setPostString] = useState("");
     const [isUpdate, setIsUpdate] = useState(false);
+    const context=useContext(UserContext);
 //     const Action = e =>{
 //    e.preventDefault();
 //    if(postString === "") 
@@ -43,16 +45,17 @@ const PostSection = () =>{
             setIsUpdate(true);
         }
     },[postToUpdate]);
+    const email=context.user.email;
 
     //setting post to firebase DB
   const addPost = async () => {
-
     try {
         firebase
         .database()
         .ref("posts/" + v4())
         .set({
             postString,
+            email
             
         });
         console.log(state);
@@ -70,7 +73,8 @@ console.log(postToUpdateKey);
         .database()
         .ref(`/posts/${postToUpdateKey}`) 
         .set({
-            postString
+            postString,
+            email
         });
         console.log(state);
         toast("Updated Successfully!",{type:"success"});

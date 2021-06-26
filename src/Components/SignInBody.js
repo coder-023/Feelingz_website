@@ -10,6 +10,7 @@ import {toast} from "react-toastify";
 const SignInBody = () =>{
     // alert("SIGNINBODY");
     // console.log(context);
+    //TODO: Remove user context
     const context=useContext(UserContext);
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');

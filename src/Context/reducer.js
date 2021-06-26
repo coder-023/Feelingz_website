@@ -17,7 +17,8 @@ export default (state,action) =>{
             return{
                 ...state,
                 postToUpdate:action.payload,
-                postToUpdateKey:action.key
+                postToUpdateKey:action.key,
+                
             };
      
             default:
