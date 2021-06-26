@@ -4,11 +4,23 @@ import {GiFlowers} from "react-icons/gi";
 import "../css/NavigationBar.css";
 import Button from "./Button";
 import Footer from "./Footer";
+import PostContext from "../Context/PostContext";
+import { UNSET_USER } from "../Context/actions.types";
 
-import UserContext from "../Context/UserContext";
 
 const NavigationBar = () =>{
-    const context = useContext(UserContext);
+    const {state,dispatch}=useContext(PostContext);
+    const {user}=state;
+    console.log(user);
+    var HandleSignOut=()=>{
+        console.log("OUT");
+        console.log(state);
+        dispatch({
+            type:UNSET_USER,
+            
+
+        });
+    }
     return(
         <div className="header">
             <Link to="/" >
@@ -17,9 +29,12 @@ const NavigationBar = () =>{
                 </Link>
                {/*if context.user.email is present display Logout button else SignIn and SignOut */}
             {
-            (context.user) ? (
+                
+            (user.email) ? (
                 <Link to="/">
-                    <Button className="signoutbtn" onClick={() => {context.setUser(null)}} value="Sign Out"/>
+                    <Button className="signoutbtn" onClick={
+                        HandleSignOut
+                    } value="Sign Out"/>
                 </Link>
                
                 ):(                 

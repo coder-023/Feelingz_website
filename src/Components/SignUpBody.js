@@ -3,10 +3,10 @@ import Button from "./Button";
 import "../css/SignUpBody.css";
 
 import firebase from "firebase/app";
-import UserContext from "../Context/UserContext";
+import PostContext from "../Context/PostContext";
 import {Redirect} from "react-router-dom";
 import {toast} from "react-toastify";
-
+import { SET_USER } from "../Context/actions.types";
 
 
 
@@ -15,8 +15,9 @@ import {toast} from "react-toastify";
 
 
 const SignUpBody = () =>{
-
-    const context=useContext(UserContext);
+    const {state,dispatch}=useContext(PostContext);
+    const {user}=state;
+    // const context=useContext(UserContext);
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
 
@@ -28,7 +29,15 @@ const SignUpBody = () =>{
         .then(
             res =>{
                 console.log(res);
-                context.setUser({email:res.user.email ,uid:res.user.uid});
+                // context.setUser({email:res.user.email ,uid:res.user.uid});
+                dispatch({
+                    type:SET_USER,
+                    payload:{
+                        email:res.user.email, 
+                        uid:res.user.uid,
+                    }
+    
+                });
             }
         )
         .catch(error =>{
@@ -40,9 +49,15 @@ const SignUpBody = () =>{
     }
     const handleFormSubmit = e =>{
         e.preventDefault();
+        if((email=='')||(password==''))
+        {
+           
+            alert("Please enter the missing details..");
+            return;
+        }
         handleSignUp();
     }
-if(context.user){
+if(user.email){
         return <Redirect to="/"></Redirect>
     }
 

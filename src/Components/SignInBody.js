@@ -2,16 +2,20 @@ import React,{useContext,useState} from "react";
 import Button from "./Button";
 import "../css/SignInBody.css";
 import firebase from "firebase/app";
-import UserContext from "../Context/UserContext";
+import PostContext from "../Context/PostContext";
 import {Redirect} from "react-router-dom";
 import {toast} from "react-toastify";
+
+import { SET_USER } from "../Context/actions.types";
 
 
 const SignInBody = () =>{
     // alert("SIGNINBODY");
     // console.log(context);
     //TODO: Remove user context
-    const context=useContext(UserContext);
+    
+    const {state,dispatch}=useContext(PostContext);
+    const {user}=state;
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
 
@@ -22,7 +26,16 @@ const SignInBody = () =>{
         .signInWithEmailAndPassword(email,password)
         .then(res =>{
             console.log(res);
-            context.setUser({email:res.user.email, uid:res.user.uid});
+            
+            dispatch({
+                type:SET_USER,
+                payload:{
+                    email:res.user.email, 
+                    uid:res.user.uid,
+                }
+
+            });
+            console.log(user);
         })
         .catch(error =>{
             console.log(error);
@@ -34,11 +47,17 @@ const SignInBody = () =>{
 
     const handleFormSubmit = e =>{
         e.preventDefault();
+        if((email=='')||(password==''))
+        {
+           
+            alert("Please enter the missing details..");
+            return;
+        }
         handleSignIn();
     }
     //We need to show this page based on some conditions
     //alert("SIGNINBODY",context);
-    if(context.user!==null){
+    if(user.email){
         
         return <Redirect to="/"></Redirect>
     }

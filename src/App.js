@@ -75,9 +75,9 @@ useEffect(()=>{
 
 
   return (
-    <UserContext.Provider value={{user,setUser}}>
+      <PostContext.Provider value={{state,dispatch}}>
+    
   <Router>
-    <PostContext.Provider value={{state,dispatch}}>
   <ToastContainer/>
     <NavigationBar/>
      <Switch>
@@ -86,12 +86,12 @@ useEffect(()=>{
        <Route exact path='/signup' component={SignUp}/> 
        <Route exact path='*' component={NotFound}/> 
      </Switch>
-     </PostContext.Provider>
     </Router> 
     
     <Footer/>
-     </UserContext.Provider>   
+       
 
+     </PostContext.Provider>
     
   );
 }

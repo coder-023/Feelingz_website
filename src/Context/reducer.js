@@ -1,6 +1,8 @@
 import { POST_TO_UPDATE,
      SET_LOADING,
-      SET_POST } from "./actions.types";
+      SET_POST, 
+      SET_USER,
+      UNSET_USER} from "./actions.types";
 
 export default (state,action) =>{
     switch (action.type) {
@@ -20,8 +22,17 @@ export default (state,action) =>{
                 postToUpdateKey:action.key,
                 
             };
-     
-            default:
+        case SET_USER:
+            return{
+                ...state,
+                user:action.payload,
+            };
+        case UNSET_USER:
+            
+            return{
+                ...state,user:{ },   
+            }    
+        default:
             return state;
     }
 }

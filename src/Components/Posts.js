@@ -15,10 +15,10 @@ import 'firebase/database';
 
 const Posts = () => {
 const {state,dispatch}= useContext(PostContext);//MISTAKE :used  useReducer instead of useContext
-const {posts,isLoading} = state;
+const {posts,isLoading,user} = state;
 
-const context=useContext(UserContext);
-console.log(context.user.email);      //test successful!
+// const context=useContext(UserContext);
+      //test successful!
 const [isUpdate, setIsUpdate] = useState(false);
 //   const [keyy,setKeyy] = useState([]);alert("Hello")
 //  var flag=false;alert("Hello")
@@ -65,12 +65,12 @@ const updateContact=(keyy,value)=>{
   {Object.entries(posts).map(([key,value])=>(
     <ListGroupItem key={key}>
       {value.postString}
-     {(value.email==context.user.email) ?(
+     {(value.email==user.email) ?(
       <span><FiEdit2 onClick={() => 
        updateContact(key,value)}className="ml-2"/>
       <BsTrashFill onClick={() => deleteContact(key)} className="text-danger icon"/>
       </span>
-     ):(console.log("Lawda"))}
+     ):(console.log('h'))}
      
 
      

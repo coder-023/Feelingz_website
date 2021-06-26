@@ -11,12 +11,14 @@ import PostContext from "../Context/PostContext";
 import {POST_TO_UPDATE} from "../Context/actions.types"
 import { useHistory } from "react-router";
 import { toast } from "react-toastify";
+
 //TODO:action function which will be triggered on button click
 
 const PostSection = () =>{
     const [postString,setPostString] = useState("");
     const [isUpdate, setIsUpdate] = useState(false);
-    const context=useContext(UserContext);
+    // const context=useContext(UserContext);
+    
 //     const Action = e =>{
 //    e.preventDefault();
 //    if(postString === "") 
@@ -33,7 +35,7 @@ const PostSection = () =>{
 //     }
  
     const {state,dispatch}=useContext(PostContext);
-    const {postToUpdate,postToUpdateKey}=state;
+    const {postToUpdate,postToUpdateKey,user}=state;
     useEffect(()=>{
         if(postToUpdate)
         {
@@ -45,7 +47,7 @@ const PostSection = () =>{
             setIsUpdate(true);
         }
     },[postToUpdate]);
-    const email=context.user.email;
+    const email=user.email;
 
     //setting post to firebase DB
   const addPost = async () => {
@@ -86,6 +88,19 @@ console.log(postToUpdateKey);
 //function which will decide whether we have to update or add post
 const handleSubmit = e =>{
     e.preventDefault();
+    if(postString=="")
+    {
+        if(isUpdate==true)
+        {
+            alert("Please don't leave the update field blank");
+            setIsUpdate(false);
+            return;
+        }
+        else{
+            alert("Enter something!");
+            return;
+        }
+    }
     isUpdate ? updatePost() : addPost();
     setPostString('');
     // toast("Success",{type:"success"});
