@@ -1,6 +1,9 @@
 import { POST_TO_UPDATE,
      SET_LOADING,
-      SET_POST } from "./actions.types";
+      SET_POST, 
+      SET_USER,
+      UNSET_USER,
+      UPDATE_POST} from "./actions.types";
 
 export default (state,action) =>{
     switch (action.type) {
@@ -17,10 +20,25 @@ export default (state,action) =>{
             return{
                 ...state,
                 postToUpdate:action.payload,
-                postToUpdateKey:action.key
+                postToUpdateKey:action.key,
+                
             };
-     
-            default:
+        case SET_USER:                      //this will add user email and uuid in the state as soon as user logs in
+            return{
+                ...state,
+                user:action.payload,
+            };
+        case UNSET_USER:                    //this will reset user={} immediately after user signs out
+            
+            return{
+                ...state,user:{ },   
+            }
+        case UPDATE_POST:
+            return{
+                ...state,
+                isUpdate:action.update,    //update will say whether to set true or false
+            }        
+        default:
             return state;
     }
 }
