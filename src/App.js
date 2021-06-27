@@ -1,8 +1,8 @@
-import React, { useEffect,useReducer,useState } from "react";
+import React, { useEffect,useReducer } from "react";
 import './css/App.css';
 
 //react router
-import {BrowserRouter as Router, Switch,Route,Link} from "react-router-dom";
+import {BrowserRouter as Router, Switch,Route} from "react-router-dom";
 
 //toast
 import {ToastContainer} from "react-toastify";
@@ -17,7 +17,7 @@ import "firebase/database"
 
 //ContextAPI STUFF
 import reducer from "./Context/reducer";
-import UserContext from "./Context/UserContext";
+
 import PostContext from "./Context/PostContext";
 import { SET_POST,SET_LOADING } from "./Context/actions.types";
 
@@ -27,7 +27,7 @@ import LandingBody from './Components/LandingBody';
 import SignIn from './Components/SignIn';
 import SignUp from './Components/SignUp';
 import NotFound from './Components/NotFound';
-import HomePage from "./Components/HomePage";
+
 
 //TODO: create useeffect for calling objects from the database
 //initializing Firebase at root page
@@ -46,7 +46,7 @@ const initialState={
 };
 function App() {
   const [state,dispatch] = useReducer(reducer,initialState);
-  const [user,setUser] = useState(null)
+  
   const getPosts = async () => {
     dispatch({
       type:SET_LOADING,

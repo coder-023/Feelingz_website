@@ -29,7 +29,7 @@ const SignUpBody = () =>{
         .then(
             res =>{
                 console.log(res);
-                // context.setUser({email:res.user.email ,uid:res.user.uid});
+                
                 dispatch({
                     type:SET_USER,
                     payload:{
@@ -49,7 +49,7 @@ const SignUpBody = () =>{
     }
     const handleFormSubmit = e =>{
         e.preventDefault();
-        if((email=='')||(password==''))
+        if((email==='')||(password===''))
         {
            
             alert("Please enter the missing details..");

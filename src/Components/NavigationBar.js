@@ -3,23 +3,29 @@ import {Link} from "react-router-dom";
 import {GiFlowers} from "react-icons/gi";
 import "../css/NavigationBar.css";
 import Button from "./Button";
-import Footer from "./Footer";
+import { toast } from "react-toastify";
 import PostContext from "../Context/PostContext";
 import { UNSET_USER } from "../Context/actions.types";
 
 
 const NavigationBar = () =>{
     const {state,dispatch}=useContext(PostContext);
-    const {user}=state;
+    const {user,postToUpdate}=state;
     console.log(user);
     var HandleSignOut=()=>{
         console.log("OUT");
         console.log(state);
+        if(postToUpdate!==null)
+        {
+            postToUpdate
+        }
         dispatch({
             type:UNSET_USER,
             
 
         });
+        
+        toast("Signed out Successfully!",{type:"success"});
     }
     return(
         <div className="header">

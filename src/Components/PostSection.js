@@ -3,13 +3,13 @@ import React,{useState,useEffect,useContext} from "react";
 import { v4 } from "uuid";
 import "../css/PostSection.css"
 import Button from "./Button";
-import Posts from "./Posts";
+
 import firebase from "firebase/app"
 //context stuff
-import UserContext from "../Context/UserContext";
+
 import PostContext from "../Context/PostContext";
 import {POST_TO_UPDATE} from "../Context/actions.types"
-import { useHistory } from "react-router";
+
 import { toast } from "react-toastify";
 
 //TODO:action function which will be triggered on button click
@@ -17,22 +17,7 @@ import { toast } from "react-toastify";
 const PostSection = () =>{
     const [postString,setPostString] = useState("");
     const [isUpdate, setIsUpdate] = useState(false);
-    // const context=useContext(UserContext);
     
-//     const Action = e =>{
-//    e.preventDefault();
-//    if(postString === "") 
-//     {
-//         (alert("Enter string"))
-//         return;
-//     } 
-//        const post={
-//            postString,id:v4()
-//        };
-//        addPosts(post);
-//        setPostString("");
-   
-//     }
  
     const {state,dispatch}=useContext(PostContext);
     const {postToUpdate,postToUpdateKey,user}=state;
@@ -68,7 +53,7 @@ const PostSection = () =>{
   };
   //Update 
   const updatePost = async () => {
-// alert("Update triggered000");
+
 console.log(postToUpdateKey);   
     try {
         firebase
@@ -88,9 +73,9 @@ console.log(postToUpdateKey);
 //function which will decide whether we have to update or add post
 const handleSubmit = e =>{
     e.preventDefault();
-    if(postString=="")
+    if(postString==="")
     {
-        if(isUpdate==true)
+        if(isUpdate===true)
         {
             alert("Please don't leave the update field blank");
             setIsUpdate(false);
@@ -103,7 +88,7 @@ const handleSubmit = e =>{
     }
     isUpdate ? updatePost() : addPost();
     setPostString('');
-    // toast("Success",{type:"success"});
+    
     setIsUpdate(false);
 
     dispatch({

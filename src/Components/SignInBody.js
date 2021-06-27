@@ -25,7 +25,7 @@ const SignInBody = () =>{
         .auth()
         .signInWithEmailAndPassword(email,password)
         .then(res =>{
-            console.log(res);
+            
             
             dispatch({
                 type:SET_USER,
@@ -35,7 +35,7 @@ const SignInBody = () =>{
                 }
 
             });
-            console.log(user);
+            
         })
         .catch(error =>{
             console.log(error);
@@ -43,11 +43,12 @@ const SignInBody = () =>{
                 type:"error"
             })
         })
+        toast("Signed in Successfully!",{type:"success"});
     }
 
     const handleFormSubmit = e =>{
         e.preventDefault();
-        if((email=='')||(password==''))
+        if((email==='')||(password===''))
         {
            
             alert("Please enter the missing details..");
@@ -56,7 +57,7 @@ const SignInBody = () =>{
         handleSignIn();
     }
     //We need to show this page based on some conditions
-    //alert("SIGNINBODY",context);
+    
     if(user.email){
         
         return <Redirect to="/"></Redirect>

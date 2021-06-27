@@ -22,12 +22,12 @@ export default (state,action) =>{
                 postToUpdateKey:action.key,
                 
             };
-        case SET_USER:
+        case SET_USER:                      //this will add user email and uuid in the state as soon as user logs in
             return{
                 ...state,
                 user:action.payload,
             };
-        case UNSET_USER:
+        case UNSET_USER:                    //this will reset user={} immediately after user signs out
             
             return{
                 ...state,user:{ },   
