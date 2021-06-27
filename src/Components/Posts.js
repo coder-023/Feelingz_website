@@ -12,6 +12,7 @@ import { toast } from 'react-toastify';
 
 
 import 'firebase/database';
+import { IconContext } from 'react-icons';
 
 const Posts = () => {
 const {state,dispatch}= useContext(PostContext);//MISTAKE :used  useReducer instead of useContext
@@ -59,9 +60,11 @@ const updateContact=(keyy,value)=>{
     <ListGroupItem key={key}>
       {value.postString}
      {(value.email===user.email) ?(
-      <span><FiEdit2 onClick={() => 
+      <span><IconContext.Provider value={{className:"editicon"}}>
+        <FiEdit2 onClick={() => 
        updateContact(key,value)}className="ml-2"/>
       <BsTrashFill onClick={() => deleteContact(key)} className="text-danger icon"/>
+      </IconContext.Provider>
       </span>
      ):(console.log('h'))}
      

@@ -43,7 +43,8 @@ const SignInBody = () =>{
                 type:"error"
             })
         })
-        toast("Signed in Successfully!",{type:"success"});
+        toast("Signed in Successfully!",{type:"success"})
+        
     }
 
     const handleFormSubmit = e =>{

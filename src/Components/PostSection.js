@@ -8,7 +8,7 @@ import firebase from "firebase/app"
 //context stuff
 
 import PostContext from "../Context/PostContext";
-import {POST_TO_UPDATE} from "../Context/actions.types"
+import {POST_TO_UPDATE, UPDATE_POST} from "../Context/actions.types"
 
 import { toast } from "react-toastify";
 
@@ -16,11 +16,11 @@ import { toast } from "react-toastify";
 
 const PostSection = () =>{
     const [postString,setPostString] = useState("");
-    const [isUpdate, setIsUpdate] = useState(false);
+     //remove this
     
  
     const {state,dispatch}=useContext(PostContext);
-    const {postToUpdate,postToUpdateKey,user}=state;
+    const {postToUpdate,postToUpdateKey,user,isUpdate}=state;
     useEffect(()=>{
         if(postToUpdate)
         {
@@ -29,7 +29,11 @@ const PostSection = () =>{
             // alert("use effect triggered!");
             setPostString(postToUpdate.postString);
             console.log(postToUpdate,postToUpdateKey);
-            setIsUpdate(true);
+            dispatch({
+                type:UPDATE_POST,
+                update:true,
+            });
+            
         }
     },[postToUpdate]);
     const email=user.email;
@@ -78,7 +82,11 @@ const handleSubmit = e =>{
         if(isUpdate===true)
         {
             alert("Please don't leave the update field blank");
-            setIsUpdate(false);
+             //isupdate
+            dispatch({
+                type:UPDATE_POST,
+                update:false,
+            });
             return;
         }
         else{
@@ -89,7 +97,11 @@ const handleSubmit = e =>{
     isUpdate ? updatePost() : addPost();
     setPostString('');
     
-    setIsUpdate(false);
+    
+    dispatch({
+        type:UPDATE_POST,
+        update:false,
+    });
 
     dispatch({
         type:POST_TO_UPDATE,

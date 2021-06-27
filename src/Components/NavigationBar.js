@@ -5,7 +5,7 @@ import "../css/NavigationBar.css";
 import Button from "./Button";
 import { toast } from "react-toastify";
 import PostContext from "../Context/PostContext";
-import { UNSET_USER } from "../Context/actions.types";
+import { POST_TO_UPDATE, UNSET_USER, UPDATE_POST } from "../Context/actions.types";
 
 
 const NavigationBar = () =>{
@@ -24,8 +24,17 @@ const NavigationBar = () =>{
             
 
         });
-        
+        dispatch({
+            type:UPDATE_POST,
+            update:false,
+        })
+        dispatch({
+            type:POST_TO_UPDATE,
+            payload:null,
+            key:null
+        });
         toast("Signed out Successfully!",{type:"success"});
+    console.log("State after Signing out",state);
     }
     return(
         <div className="header">

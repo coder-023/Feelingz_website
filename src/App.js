@@ -43,6 +43,7 @@ const initialState={
   postToUpdateKey:null,
   isLoading:false,
   user:{},//because its storing uuid and email
+  isUpdate:false,
 };
 function App() {
   const [state,dispatch] = useReducer(reducer,initialState);
