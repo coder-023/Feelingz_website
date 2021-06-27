@@ -81,6 +81,11 @@ const handleSubmit = e =>{
     {
         if(isUpdate===true)
         {
+            dispatch({
+                type:POST_TO_UPDATE,
+                payload:null,
+                key:null
+            });
             alert("Please don't leave the update field blank");
              //isupdate
             dispatch({
